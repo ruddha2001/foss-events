@@ -5,6 +5,8 @@ const PORT = process.env.PORT || 3000;
 
 dotenv.config({ path: ".env" });
 
+dotenv.config({ path: ".env" });
+
 const app = new express();
 
 // connecting mongodb
@@ -16,8 +18,8 @@ app.use(express.json());
 
 //routes
 app.use("/event", require("./routes/EventRoutes"));
-app.use("/users/login", require("./routes/users/login"));
 app.use("/users/logout", require("./routes/users/logout"));
+app.use("/users/login", require("./routes/users/login"));
 app.use("/users/signup", require("./routes/users/signup"));
 
 app.listen(PORT, console.log(`listening on port ${PORT}`));
